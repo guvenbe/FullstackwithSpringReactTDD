@@ -4,10 +4,15 @@ jdk:
 script:
   - ./gradlew check
 
-before_deploy:
-  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+#before_deploy:
+#  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 
 deploy:
   provider: heroku
   api_key: $HEROKU_TOKEN
   app: book-demo-store-bg
+  script:
+    - apt-get update -yq
+      - apt-get install -y ruby-dev
+      - gem install dpl
+      - dpl --provider=heroku --app=my-app-staging --api_key=$HEROKU_TOKEN
