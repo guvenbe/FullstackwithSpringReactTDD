@@ -3,8 +3,9 @@ jdk:
   - openjdk11
 script:
   - ./gradlew check
-#before_deploy:
-#  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+
+before_deploy:
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 
 deploy:
   provider: heroku
