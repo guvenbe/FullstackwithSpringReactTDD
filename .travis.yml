@@ -4,7 +4,7 @@ jdk:
 script:
   - ./gradlew check
 
-#before_deploy:
+before_deploy:
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 2.0.0
 
 deploy:
