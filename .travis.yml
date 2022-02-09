@@ -14,8 +14,6 @@ before_deploy:
 
 deploy:
   provider: heroku
-  edge:
-    branch: 1.10.9
   strategy: git
   api_key: $HEROKU_API_KEY
   app: book-demo-store-bg
