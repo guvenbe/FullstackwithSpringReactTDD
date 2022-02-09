@@ -4,16 +4,11 @@ jdk:
 script:
   - ./gradlew check
 
-#before_deploy:
+before_deploy:
 ##  - gem install faraday-patron -v 1.0.0
 ##  - gem install bundler -v 1.0.10
 #  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.9.0
-before_script:
-  - apt-get update -qy
-  - apt-get install -y ruby-dev
-  - gem install dpl --pre
-  - gem install bundler
-  - yarn install
+
 
 deploy:
   provider: heroku
