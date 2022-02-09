@@ -7,6 +7,8 @@ script:
 before_deploy:
 ##  - gem install faraday-patron -v 1.0.0
 ##  - gem install bundler -v 1.0.10
+  - rvm requirements
+  - rvm install 2.6
   - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday-patron
 
 
