@@ -8,6 +8,12 @@ script:
 ##  - gem install faraday-patron -v 1.0.0
 ##  - gem install bundler -v 1.0.10
 #  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.9.0
+before_script:
+  - apt-get update -qy
+  - apt-get install -y ruby-dev
+  - gem install dpl --pre
+  - gem install bundler
+  - yarn install
 
 deploy:
   provider: heroku
@@ -15,8 +21,4 @@ deploy:
   api_key: $HEROKU_API_KEY
   app: book-demo-store-bg
 
-  script:
-    - apt-get update -yq
-      - apt-get install -y ruby-dev
-      - gem install dpl
-      - dpl-heroku --provider=heroku --app=ook-demo-store-bg --api_key=$HEROKU_API_KEY
+
