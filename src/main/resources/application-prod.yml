@@ -14,11 +14,15 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: validate
+      ddl-auto: validate:
 
   flyway:
     baseline-on-migrate: true
     validate-on-migrate: true
+  jmx:
+
 #springdoc:
 #  swagger-ui:
 #    path: /swagger-ui-custom.html
+server:
+  port: ${PORT}
