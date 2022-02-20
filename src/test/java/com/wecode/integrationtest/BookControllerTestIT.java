@@ -10,12 +10,12 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest(classes = BookstoreApplication.class,
 webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-// DirtiesContext after eacg test clean up the db...to avoid primary key violation
+// DirtiesContext after each test clean up the db...to avoid primary key violation
 public class BookControllerTestIT {
     @LocalServerPort
     private int port;
