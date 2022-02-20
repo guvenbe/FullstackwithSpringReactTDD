@@ -19,6 +19,7 @@ public class BookControllerTestIT {
     private TestRestTemplate testRestTemplate;
 
 //    @Test
+//    @Disabled
 //    @Sql(scripts = {"classpath:InsertInitialBookRecordForTest.sql"})
 //    public void shouldReturnBookWhenApiCalled(){
 //        BookDto[] listOfBooks = testRestTemplate
@@ -29,6 +30,7 @@ public class BookControllerTestIT {
 //    }
 //
 //    @Test
+//    @Disabled
 //    @Sql(scripts = {"classpath:InsertInitialBookRecordForTest.sql"})
 //    public void shouldReturnBookWhenApiCalled1(){
 //        BookDto[] listOfBooks = testRestTemplate

@@ -34,11 +34,17 @@ public class BookController {
     })
     @GetMapping()
     public ResponseEntity<List<BookDto>> getBooks() {
-        BookDto book = BookDto.builder()
-                .title("My First Book Title")
+        BookDto book1 = BookDto.builder()
+                .title("test title")
                 .build();
         List<BookDto> books= new ArrayList<>();
-        books.add(book);
+        BookDto book2 = BookDto.builder()
+                .title("My First Book Title2")
+                .description("test description")
+                .releaseYear(2020)
+                .build();
+        books.add(book1);
+//        books.add(book2);
 //        List<BookDto> books = bookService.getBooks();
         return ResponseEntity.ok(books);
     }
