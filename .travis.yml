@@ -9,7 +9,7 @@ before_deploy:
 ##  - gem install bundler -v 1.0.10
   - rvm requirements
   - rvm install 2.6
-  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 11
 
 
 deploy:
