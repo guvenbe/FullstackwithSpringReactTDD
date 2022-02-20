@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Api(value = "Book Api", tags = "Book Api", produces = "application/json")
@@ -33,12 +34,12 @@ public class BookController {
     })
     @GetMapping()
     public ResponseEntity<List<BookDto>> getBooks() {
-//        BookDto book = BookDto.builder()
-//                .title("My First Book Title")
-//                .build();
-//        List<BookDto> books= new ArrayList<>();
-//        books.add(book);
-        List<BookDto> books = bookService.getBooks();
+        BookDto book = BookDto.builder()
+                .title("My First Book Title")
+                .build();
+        List<BookDto> books= new ArrayList<>();
+        books.add(book);
+//        List<BookDto> books = bookService.getBooks();
         return ResponseEntity.ok(books);
     }
 }
