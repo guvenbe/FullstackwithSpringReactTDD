@@ -1,1 +1,1 @@
-web: java -Dserver.port=8080 $JAVA_OPTS -jar build/libs/bookstore-0.0.1-SNAPSHOT-plain.jar
+web: java -Dserver.port=8080 $JAVA_OPTS -jar build/libs/bookstore-0.0.1-SNAPSHOT.jar
