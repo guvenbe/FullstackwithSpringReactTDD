@@ -3,7 +3,6 @@ package com.wecode.controller;
 import com.wecode.bookstore.controller.BookController;
 import com.wecode.bookstore.dto.BookDto;
 import com.wecode.bookstore.service.BookService;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -27,7 +26,6 @@ public class BookControllerTest {
     private BookController bookController;
 
     @Test
-    @Disabled
     public void shouldReturnListBookWhenGetBooksCalled(){
         List<BookDto> booksDto = new ArrayList<>();
         BookDto bookDto = getBookDto();
