@@ -23,5 +23,4 @@ spring:
 #springdoc:
 #  swagger-ui:
 #    path: /swagger-ui-custom.html
-server:
-  port: ${PORT}
+
