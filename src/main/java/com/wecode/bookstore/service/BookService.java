@@ -21,7 +21,7 @@ public class BookService {
         this.modelMapper = modelMapper;
     }
 
-    public List<BookDto> getBooks(){
+    public List<BookDto> getBooks() {
         Iterable<Book> allBooks = bookRepository.findAll();
         return StreamSupport.stream(allBooks.spliterator(), false)
                 .map(convertBookModelBookDto())
@@ -29,7 +29,17 @@ public class BookService {
 
     }
 
+    public List<BookDto> getBooksByTitle(String bookTitle) {
+        List<Book> booksByTitle = bookRepository.findBooksByTitleIgnoreCase(bookTitle);
+
+        return booksByTitle.stream()
+                .map(convertBookModelBookDto())
+                .collect(Collectors.toList());
+    }
+
+
     private Function<Book, BookDto> convertBookModelBookDto() {
         return book -> modelMapper.map(book, BookDto.class);
     }
+
 }
