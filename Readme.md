@@ -4,3 +4,6 @@
 
 ./gradlew clean
 ./gradlew build
+
+
+hello
