@@ -1,6 +1,6 @@
 CREATE TABLE user (
-    id uuid not null primary key,
-    name varchar not null,
-    email varchar not null,
-    password varchar not null
+                    id uuid NOT NULL PRIMARY KEY,
+                    name VARCHAR NOT NULL,
+                    email VARCHAR NOT NULL,
+                    password VARCHAR NOT NULL
 );
