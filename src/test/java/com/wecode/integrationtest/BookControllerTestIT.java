@@ -4,7 +4,6 @@ import com.wecode.bookstore.BookstoreApplication;
 import com.wecode.bookstore.config.JwtUtil;
 import com.wecode.bookstore.dto.BookDto;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -59,7 +58,7 @@ public class BookControllerTestIT {
     }
 
     @Test
-    @Disabled
+    //@Disabled
     @Sql(scripts = {"classpath:InsertInitialBookRecordForTest.sql"})
     public void shouldReturnBookWhenApiCalled() {
         BookDto[] listOfBooks = testRestTemplate
@@ -70,7 +69,7 @@ public class BookControllerTestIT {
     }
 
     @Test
-    @Disabled
+    //@Disabled
     @Sql(scripts = {"classpath:InsertInitialBookRecordForTest.sql"})
     public void shouldReturnBookWhenApiCalled1() {
         BookDto[] listOfBooks = testRestTemplate

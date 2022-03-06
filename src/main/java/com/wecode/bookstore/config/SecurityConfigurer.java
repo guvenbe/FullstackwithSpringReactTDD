@@ -9,7 +9,13 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.Arrays;
+import java.util.Collections;
 
 @EnableWebSecurity
 public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
@@ -25,14 +31,15 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     }
 
     //This is what we are allowing
-/*    @Override
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .cors().configurationSource(request -> {
                     CorsConfiguration corsConfiguration = new CorsConfiguration();
                     corsConfiguration.setAllowedOrigins(Collections.singletonList("*"));
                     corsConfiguration.setAllowedMethods(Arrays.asList(
-                            "GET", "POST", "PUT", "DELETE", "OPTIONS"));
+                            "GET", "POST", "PUT", "DELETE", "OPTIONS"
+                    ));
                     corsConfiguration.setAllowedHeaders(Collections.singletonList("*"));
                     return corsConfiguration;
                 }).and()
@@ -42,18 +49,19 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers("/api/v1/login").permitAll()
-                .antMatchers("/h2-console").permitAll()
+                .antMatchers("/api/v1/register").permitAll()
                 .anyRequest().authenticated();
-    }*/
+    }
+
 
     //This is for development debuging
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
-                .authorizeRequests().antMatchers("/console/**").permitAll();
-        httpSecurity.csrf().disable();
-        httpSecurity.headers().frameOptions().disable();
-    }
+//    @Override
+//    protected void configure(HttpSecurity httpSecurity) throws Exception {
+//        httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
+//                .authorizeRequests().antMatchers("/console/**").permitAll();
+//        httpSecurity.csrf().disable();
+//        httpSecurity.headers().frameOptions().disable();
+//    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
